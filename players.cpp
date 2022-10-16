@@ -31,8 +31,8 @@ int main () {
     cout << "Enter player 2 position type with first letter of position example: striker = s" << endl;
     cin >> position2;
 
-    cout << "player1:" << s.playerNumber << " player1 top speed:" << s.topSpeed << " player1 position:" << position1 <<  endl;
-    cout << "player2:" << s.playerNumber2 << " player2 top speed:" << s.topSpeed2 << " player1 position:" << position2 << endl;
+    cout << "player1 number:" << s.playerNumber << "|  player1 top speed:" << s.topSpeed << "|  player1 position:" << position1 <<  endl;
+    cout << "player2 number:" << s.playerNumber2 << "|  player2 top speed:" << s.topSpeed2 << "|  player1 position:" << position2 << endl;
 
     return 0;
 }
