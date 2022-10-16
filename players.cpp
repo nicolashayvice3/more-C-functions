@@ -7,14 +7,15 @@ int main () {
     struct soccer {
     int playerNumber; 
     float topSpeed;
+    enum playerPosition1 { goalkeeper, midfielder, striker, winger, defender};
     } player1;
 
     struct soccer {
     int playerNumber2;
     float topSpeed2;
+    enum playerPosition2 { goalkeeper, midfielder, striker, winger, defender};
     } player2;
 
-    enum playerPosition { goalkeeper, midfielder, striker, winger, defender};
 
     char position1, position2;
 
@@ -36,19 +37,19 @@ int main () {
     
     switch(position1) {
         case 'd':
-            cout << "  |  player1 position:" << defender <<  endl;
+            cout << "  |  player1 position:" << player1.defender <<  endl;
             break;
         case 's':
-            cout << "  |  player1 position:" << striker <<  endl;
+            cout << "  |  player1 position:" << player1.striker <<  endl;
             break;
         case 'm':
-            cout << "  |  player1 position:" << midfielder <<  endl;
+            cout << "  |  player1 position:" << player1.midfielder <<  endl;
             break;
         case 'w':
-            cout << "  |  player1 position:" << winger <<  endl;
+            cout << "  |  player1 position:" << player1.winger <<  endl;
             break;
         default:
-            cout << "  |  player1 position:" << goalkeeper <<  endl;
+            cout << "  |  player1 position:" << player1.goalkeeper <<  endl;
     }
 
     cout << "player2 number:" << player2.playerNumber2 << "  |  player2 top speed:" << player2.topSpeed2 << "  |  player1 position:" << position2 << endl;
