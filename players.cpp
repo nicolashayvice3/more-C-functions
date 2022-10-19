@@ -31,7 +31,7 @@ int main () {
     cout << "Enter player 2 position type with first letter of position example: striker = s" << endl;
     cin >> position2;
 
-    cout << "player1 number:" << player1.playerNumber << "  |  player1 top speed:" << player1.topSpeed;
+    cout << "player1 number:" << player1.playerNumber << "  |  player1 top speed:" << player1.topSpeed << "mph";
     
     switch(position1) {
         case 'd':
@@ -50,7 +50,7 @@ int main () {
             cout << "  |  player1 position:" << " goalkeeper" <<  endl;
     }
 
-    cout << "player2 number:" << player2.playerNumber2 << "  |  player2 top speed:" << player2.topSpeed2;
+    cout << "player2 number:" << player2.playerNumber2 << "  |  player2 top speed:" << player2.topSpeed2 << "mph";
 
     switch(position2) {
         case 'd':
