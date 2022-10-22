@@ -18,10 +18,14 @@ int main () {
     char position2;
     } player2;  
 
-    // enum for player positions, it is not used in the program, I seem to not be able to store it when I get it from the user
-    enum playerPosition1 { g, m, s, w, d };
+    // enum for player positions 
+
+    enum playerPosition { g, m, s, w, d };
+    enum playerPosition position1;
+    enum playerPosition position2;
 
     // prompts the player to add all the necessary information
+
     cout << "Enter player 1 number" << endl;
     cin >> player1.playerNumber;
     cout << "Enter player 1 top speed in miles per h (only input miles)" << endl;
@@ -37,8 +41,10 @@ int main () {
     cin >> player2.position2;
 
     cout << "player1 number:" << player1.playerNumber << "  |  player1 top speed:" << player1.topSpeed << "mph";
+
     
-    // switch statement checks the position of the player and prints it out
+    // switch statement checks the enum position of the player and prints the name out
+
     switch(player1.position1) {
         case 'd':
             cout << "  |  player1 position:" << " defender" <<  endl;
