@@ -21,8 +21,11 @@ int main () {
     // enum for player positions 
 
     enum playerPosition { g, m, s, w, d };
-    enum playerPosition position1;
-    enum playerPosition position2;
+    playerPosition goalkeeper = position1;
+    playerPosition midfielder = m;
+    playerPosition striker = s;
+    playerPosition winger = w;
+    playerPosition defender = d;
 
     // prompts the player to add all the necessary information
 
