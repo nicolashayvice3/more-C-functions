@@ -1,6 +1,28 @@
 #include <iostream>
 
 using namespace std;
+    
+enum playerPosition { g, m, s, w, d };
+
+istream& operator>>(istream& is, playerPosition& obj) {
+    string text;
+    if (is >> text) {
+        if (text == "g") {
+            obj = g;
+        } else if (text == "m") {
+            obj = m;
+        } else if (text == "s") {
+            obj = s;
+        } else if (text == "w") {
+            obj = w;
+        } else if (text == "d") {
+            obj = d;
+        } else {
+            is.setstate(ios_base::failbit);
+        }
+    }
+    return is;
+}
 
 int main () {
 
@@ -19,13 +41,7 @@ int main () {
     } player2;  
 
     // enum for player positions 
-
-    enum playerPosition { g, m, s, w, d };
-    playerPosition goalkeeper = position1;
-    playerPosition midfielder = m;
-    playerPosition striker = s;
-    playerPosition winger = w;
-    playerPosition defender = d;
+    playerPosition position;
 
     // prompts the player to add all the necessary information
 
@@ -34,7 +50,7 @@ int main () {
     cout << "Enter player 1 top speed in miles per h (only input miles)" << endl;
     cin >> player1.topSpeed;
     cout << "Enter player 1 position type with first letter of position example: winger = w" << endl;
-    cin >> player1.position1;
+    cin >> position;
     cout << "\n" << "\n";
     cout << "Enter player 2 number" << endl;
     cin >> player2.playerNumber2;
@@ -48,17 +64,17 @@ int main () {
     
     // switch statement checks the enum position of the player and prints the name out
 
-    switch(player1.position1) {
-        case 'd':
+    switch(position) {
+        case d:
             cout << "  |  player1 position:" << " defender" <<  endl;
             break;
-        case 's':
+        case s:
             cout << "  |  player1 position:" << " striker" <<  endl;
             break;
-        case 'm':
+        case m:
             cout << "  |  player1 position:" << " midfielder" <<  endl;
             break;
-        case 'w':
+        case w:
             cout << "  |  player1 position:" << " winger" <<  endl;
             break;
         default:
