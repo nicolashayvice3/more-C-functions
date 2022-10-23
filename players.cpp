@@ -5,7 +5,6 @@ using namespace std;
 enum playerPosition { g, m, s, w, d };
 
 // adds the functionality of saving an enum through the console through user input >> cin
-
 istream& operator>>(istream& is, playerPosition& obj) {
     string text;
     if (is >> text) {
@@ -29,7 +28,6 @@ istream& operator>>(istream& is, playerPosition& obj) {
 int main () {
 
     // players structs storing all their information with variables 
-
     struct soccer {
     int playerNumber; 
     float topSpeed;
@@ -45,7 +43,6 @@ int main () {
     playerPosition position2;
 
     // prompts the player to add all the necessary information
-
     cout << "Enter player 1 number" << endl;
     cin >> player1.playerNumber;
     cout << "Enter player 1 top speed in miles per h (only input miles)" << endl;
@@ -64,7 +61,6 @@ int main () {
 
     
     // switch statement checks the enum position of the player and prints the name out
-
     switch(position1) {
         case d:
             cout << "  |  player1 position:" << " defender" <<  endl;
