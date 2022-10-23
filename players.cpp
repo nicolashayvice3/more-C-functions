@@ -1,8 +1,10 @@
 #include <iostream>
 
 using namespace std;
-    
+
 enum playerPosition { g, m, s, w, d };
+
+// adds the functionality of saving an enum through the console through user input >> cin
 
 istream& operator>>(istream& is, playerPosition& obj) {
     string text;
@@ -26,22 +28,21 @@ istream& operator>>(istream& is, playerPosition& obj) {
 
 int main () {
 
-    // players variables storing all their information
+    // players structs storing all their information with variables 
 
     struct soccer {
     int playerNumber; 
     float topSpeed;
-    char position1;
     } player1;
 
     struct soccer2 {
     int playerNumber2;
     float topSpeed2;
-    char position2;
     } player2;  
 
-    // enum for player positions 
-    playerPosition position;
+    // enum variables for player positions 
+    playerPosition position1;
+    playerPosition position2;
 
     // prompts the player to add all the necessary information
 
@@ -50,21 +51,21 @@ int main () {
     cout << "Enter player 1 top speed in miles per h (only input miles)" << endl;
     cin >> player1.topSpeed;
     cout << "Enter player 1 position type with first letter of position example: winger = w" << endl;
-    cin >> position;
+    cin >> position1;
     cout << "\n" << "\n";
     cout << "Enter player 2 number" << endl;
     cin >> player2.playerNumber2;
     cout << "Enter player 2 top speed in miles per h (only input miles)" << endl;
     cin >> player2.topSpeed2;
     cout << "Enter player 2 position type with first letter of position example: striker = s" << endl;
-    cin >> player2.position2;
+    cin >> position2;
 
     cout << "player1 number:" << player1.playerNumber << "  |  player1 top speed:" << player1.topSpeed << "mph";
 
     
     // switch statement checks the enum position of the player and prints the name out
 
-    switch(position) {
+    switch(position1) {
         case d:
             cout << "  |  player1 position:" << " defender" <<  endl;
             break;
@@ -83,17 +84,17 @@ int main () {
 
     cout << "player2 number:" << player2.playerNumber2 << "  |  player2 top speed:" << player2.topSpeed2 << "mph";
 
-    switch(player2.position2) {
-        case 'd':
+    switch(position2) {
+        case d:
             cout << "  |  player2 position:" << " defender" <<  endl;
             break;
-        case 's':
+        case s:
             cout << "  |  player2 position:" << " striker" <<  endl;
             break;
-        case 'm':
+        case m:
             cout << "  |  player2 position:" << " midfielder" <<  endl;
             break;
-        case 'w':
+        case w:
             cout << "  |  player2 position:" << " winger" <<  endl;
             break;
         default:
