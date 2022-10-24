@@ -19,7 +19,7 @@ int main () {
     }
 
     // user input for second array
-    cout << endl << "|Input Matrix a|" << "\n\n";
+    cout << endl << "|Input Matrix b|" << "\n\n";
     for(int i = 0; i < 3; i++) {
         for(int j = 0; j < 3; j++) {
             cout << "Enter the value for a" << i + 1 << j + 1 << ": ";
@@ -48,8 +48,8 @@ int main () {
         }
     }
 
-    // displaying the sum of the two arrays in sum
-    cout << endl << "|Sum of A and B in to C" << "\n\n";
+    // displaying the sum of the two arrays in sum(C)
+    cout << endl << "|Sum of A and B in to C|" << "\n\n";
     for (int i = 0; i < 3; ++i) {
         cout << "\t";
         for (int j = 0; j < 3; ++j) {
@@ -57,6 +57,23 @@ int main () {
         }
         cout << endl;
     }
+
+    //multiply sum(C) by 3
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            sum[i][j] = sum[i][j] * 3;
+        }
+    }
+
+    cout << endl << "|C multiplied by 3|" << "\n\n";
+    for (int i = 0; i < 3; ++i) {
+        cout << "\t";
+        for (int j = 0; j < 3; ++j) {
+            cout << sum[i][j] << " ";
+        }
+        cout << endl;
+    }
+
 
     return 0;
 }
