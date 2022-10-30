@@ -5,8 +5,7 @@ using namespace std;
 
 //runs all the functions within main
 
-int main()
-{
+int main(){
   //starts the game with a greeting 
   greet();
 
@@ -20,8 +19,7 @@ int main()
   char letter;
 
   //while loop to keep game running until all guesses are used or word is guessed
-  while(answer!=codeword && misses < 3)
-  {
+  while(answer!=codeword && misses < 3){
     display_misses(misses);
     display_status(incorrect, answer);
 
@@ -29,20 +27,17 @@ int main()
     cin>>letter;
 
     //for loop to check if letter is in the word
-    for(int i = 0; i<codeword.length(); i++)
-    {
+    for(int i = 0; i<codeword.length(); i++){
       if(letter==codeword[i])
       {
         answer[i] = letter;
         guess = true;
       }
     }
-    if(guess)
-    {
+    if(guess){
       cout<<"\nCorrect!\n";
     }
-    else
-    {
+    else{
       cout<<"\nIncorrect! Another portion of the person has been drawn.\n";
       incorrect.push_back(letter);
       misses++;

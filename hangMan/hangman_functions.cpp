@@ -3,8 +3,7 @@
 #include "hangman_functions.h"
 using namespace std;
 
-void greet()
-{
+void greet(){
   std::cout << "=====================\n";
   std::cout << "Hangman: The Game\n";
   std::cout << "=====================\n";
@@ -12,10 +11,8 @@ void greet()
 }
 
 // draws the hangman
-void display_misses(int misses)
-{
-  if(misses==0)
-  {
+void display_misses(int misses){
+  if(misses==0){
     cout<<"  +---+ \n";
     cout<<"  |   | \n";
     cout<<"      | \n";
@@ -24,8 +21,7 @@ void display_misses(int misses)
     cout<<"      | \n";
     cout<<" ========= \n";
   }
-  else if(misses==1)
-  {
+  else if(misses==1){
     cout<<"  +---+ \n";
     cout<<"  |   | \n";
     cout<<"  O   | \n";
@@ -34,8 +30,7 @@ void display_misses(int misses)
     cout<<"      | \n";
     cout<<" ========= \n";
   }
-  else if(misses==2)
-  {
+  else if(misses==2){
     cout<<"  +---+ \n";
     cout<<"  |   | \n";
     cout<<"  O   | \n";
@@ -48,28 +43,23 @@ void display_misses(int misses)
 }
 
 
-void display_status(vector<char> incorrect, string answer)
-{
+void display_status(vector<char> incorrect, string answer){
   cout<<"Incorrect Guesses: \n";
 
-  for(int i = 0; i<incorrect.size(); i++)
-  {
+  for(int i = 0; i<incorrect.size(); i++){
     cout<<incorrect[i]<<" ";
   }
 
   cout<<"\nCodeword:\n";
 
-  for(int i = 0; i<answer.length(); i++)
-  {
+  for(int i = 0; i<answer.length(); i++){
     cout<<answer[i]<<" ";
   }
 }
 
 // draws the saved man or the upside down hanged man
-void end_game(string answer, string codeword)
-{
-  if(answer==codeword)
-  {
+void end_game(string answer, string codeword){
+  if(answer==codeword){
     cout<<"Hooray! You saved the person from being hanged and earned a medal of honor!\n";
     cout<<"  O    \n";
     cout<<" /|\\  \n";
@@ -77,8 +67,7 @@ void end_game(string answer, string codeword)
     cout<<"       \n";
     cout<<"Congratulations!\n";
   }
-  else
-  {
+  else{
     cout<<"On no! The man is hanged!\n";
     cout<<"  +---+ \n";
     cout<<"  |   | \n";
