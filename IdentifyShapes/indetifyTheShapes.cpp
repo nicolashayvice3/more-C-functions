@@ -2,12 +2,23 @@
 
 using namespace std;
 
+int width = 2;
+int height = 6;
+
 void displaySquare(){
     cout<<" ■ \n";
 }
 
 void displayTriangle(){
     cout<<" ▲ \n";
+}
+
+void displayRectangle(int width, int height){
+
+    int rectangleDiameter = width*height;
+
+    cout<<" ▬ \n";
+    cout<<" this rectangle has a diameter of " << rectangleDiameter << "Planck units \n";
 }
 
 int main(){
