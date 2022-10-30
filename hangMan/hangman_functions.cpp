@@ -29,12 +29,12 @@ void display_misses(int misses)
     cout<<"  +---+ \n";
     cout<<"  |   | \n";
     cout<<"  O   | \n";
-    cout<<" /|   | \n";
+    cout<<" /|\\   | \n";
     cout<<"      | \n";
     cout<<"      | \n";
     cout<<" ========= \n";
   }
-  else if(misses==3)
+  else if(misses==2)
   {
     cout<<"  +---+ \n";
     cout<<"  |   | \n";
