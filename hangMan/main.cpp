@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "hangman_functions.h"
+#include "hangmanFunctions.h"
 using namespace std;
 
 //runs all the functions within main

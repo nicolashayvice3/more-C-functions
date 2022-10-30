@@ -2,7 +2,15 @@
 
 using namespace std;
 
-    int main(){
+void displaySquare(){
+    cout<<" ■ \n";
+}
+
+void displayTriangle(){
+    cout<<" ▲ \n";
+}
+
+int main(){
     int choice;
     bool gameOn = true;
     while (gameOn != false){
@@ -17,6 +25,7 @@ using namespace std;
         switch (choice){
             case 1:
             cout << "game start!\n";
+            displayTriangle();
             break;
             case 2:
             cout << "Your final Score\n";
