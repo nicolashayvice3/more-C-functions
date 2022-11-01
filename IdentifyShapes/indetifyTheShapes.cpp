@@ -26,8 +26,6 @@ int game() {
     string choice;
     int score = 0;
 
-    // gameOn = false; to be used to get out of the loop
-
     while (gameOn != false){
     srand((unsigned) time(0));
     int result = 1 + (rand() % 4);
@@ -42,10 +40,10 @@ int game() {
             if (choice == "rectangle"){
             cout << "Congratulations 10+ points\n\n";
             cout << "\n\n *******************************\n";
-            ++score;
+            score = score + 10;
             } else if (choice != "rectangle"){
-            cout << "Sorry, the correct answer is rectangle\n\n";
-            cout << "\n\n *******************************\n";
+            cout << "Sorry please try again, the correct answer is rectangle\n\n";
+            gameOn = false;
             } 
             break;
         case 2:
@@ -57,10 +55,10 @@ int game() {
             if (choice == "square"){
             cout << "Congratulations 10+ points\n\n";
             cout << "\n\n *******************************\n";
-            ++score;
+            score = score + 10;
             } else if (choice != "square"){
-            cout << "Sorry, the correct answer is square\n\n";
-            cout << "\n\n *******************************\n";
+            cout << "Sorry please try again, the correct answer is square\n\n";
+            gameOn = false;
             } 
             break;
         case 3:
@@ -72,10 +70,10 @@ int game() {
             if (choice == "triangle"){
             cout << "Congratulations 10+ points\n\n";
             cout << "\n\n *******************************\n";
-            ++score;
+            score = score + 10;
             } else if (choice != "triangle"){
-            cout << "Sorry, the correct answer is triangle\n\n";
-            cout << "\n\n *******************************\n";
+            cout << "Sorry please try again, the correct answer is triangle\n\n";
+            gameOn = false;
             } 
             break;
         case 4:
@@ -87,27 +85,28 @@ int game() {
             if (choice == "circle"){
             cout << "Congratulations 10+ points\n\n";
             cout << "\n\n *******************************\n";
-            ++score;
+            score = score + 10;
             } else if (choice != "circle"){
-            cout << "Sorry, the correct answer is circle\n\n";
-            cout << "\n\n *******************************\n";
+            cout << "Sorry please try again, the correct answer is circle\n\n";
+            gameOn = false;
             } 
             break;
         default:
             cout<<"error game logic not working, game resetting \n";
-            cout<< score << " - points as highScore" << endl;
+            cout<< score << " - points as highScore before crash" << endl;
             break;
         }
     }
-    return 0;
+
+    return score;
 }
 
 int main(){
     int choice;
     int width = 2;
     int height = 6;
+    int highScore = game();
     bool gameOn = true;
-    int highScore = 0;
     while (gameOn != false){
         cout << "\n\n *******************************\n";
         cout << " 1 - Play the game.\n";
@@ -119,24 +118,23 @@ int main(){
 
         switch (choice){
             case 1:
-            cout << "\n game start! \n";
-            game();
+                cout << "\n game start! \n";
+                game();
             break;
             case 2:
-            cout << "\n Your final Score: " << highScore << endl;
+                cout << "\n Your final Score: " << highScore << endl;
             break;
             case 3:
-            cout << " \n End of Program. \n";
-            gameOn = false;
+                cout << " \n End of Program. \n";
+                gameOn = false;
             break;
             default:
-            cout << "Not a Valid Choice. \n";
-            cout << "Choose again.\n";
-            cout << " Enter your choice and press return: ";
-            cin >> choice;
+                cout << "Not a Valid Choice. \n";
+                cout << "Choose again.\n";
+                cout << " Enter your choice and press return: ";
+                cin >> choice;
             break;
-    }
-
+        }
     }
 
 return 0;
