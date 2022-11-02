@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// functions to display the different shapes
 void displaySquare(){
     cout<<" ■ \n";
 }
@@ -20,7 +21,9 @@ void displayRectangle(int width, int height){
     cout<<" this shape has diameter of " << rectangleDiameter << "mm units, with width=2 & height=4 this info might help you \n";
     cout<<" ▬ \n";
 }
- 
+
+// runs the game and displays each shape through a switch statement. Each switch statement calls a function to display the shape
+// and adds +10 points to the score if the user gets the shape correct or exits the game if the user gets the shape wrong taking them to the main menu
 int game() {
     bool gameOn = true;
     string choice;
@@ -106,10 +109,11 @@ int game() {
             break;
         }
     }
-
+    // score returned to be displayed in the main menu - main() function
     return score;
 }
 
+// main menu function with switch statement for starting game, displaying highscore and exiting the game
 int main(){
     int choice;
     int width = 2;
