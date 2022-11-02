@@ -25,13 +25,18 @@ int game() {
     bool gameOn = true;
     string choice;
     int score = 0;
-
+    bool start = true;
     while (gameOn != false){
     srand((unsigned) time(0));
     int result = 1 + (rand() % 4);
+
+        if (start == true) {
+            cout << "\n Try getting as many shapes as possible correct! GL! \n";
+        }
     
         switch (result) {
         case 1:
+            start = false;
             cout << "\n what is this this shape?\n";
             displayRectangle(2, 4);
             cout << "answer: ";
@@ -47,6 +52,7 @@ int game() {
             } 
             break;
         case 2:
+            start = false;
             cout << "\n what is this this shape?\n";
             displaySquare();
             cout << "answer: ";
@@ -62,6 +68,7 @@ int game() {
             } 
             break;
         case 3:
+            start = false;
             cout << "\n what is this this shape?\n";
             displayTriangle();
             cout << "answer: ";
@@ -77,6 +84,7 @@ int game() {
             } 
             break;
         case 4:
+            start = false;
             cout << "\n what is this this shape?\n";
             displayCircle();
             cout << "answer: ";
@@ -92,6 +100,7 @@ int game() {
             } 
             break;
         default:
+            start = false;
             cout<<"error game logic not working, game resetting \n";
             cout<< score << " - points as highScore before crash" << endl;
             break;
