@@ -30,6 +30,7 @@ int game() {
     int score = 0;
     bool start = true;
     while (gameOn != false){
+    //randomizer for the 4 shapes
     srand((unsigned) time(0));
     int result = 1 + (rand() % 4);
 
