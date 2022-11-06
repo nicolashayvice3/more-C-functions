@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// data structure to store the information of the daily expenses
 struct Expenses1{
     double housing;
     double utilities;
@@ -23,6 +24,7 @@ struct Expenses3{
     double food;
 } expenses3;
 
+// display the input for the daily expenses
 void setDailyExpenses(){
 
     cout<<"Enter in Housing expenses: ";
@@ -59,7 +61,7 @@ void setDailyExpenses3(){
     cin>>expenses3.food;
 }
 
-// add Expenses1
+// adds the total of the expenses
 double addDailyExpenses(){
     double total = expenses1.housing + expenses1.utilities + expenses1.transportation + expenses1.food;
     cout<<"total is: " << total << endl;
@@ -78,6 +80,15 @@ double addDailyExpenses3(){
     return total;
 }
 
+// add all expenses to the total weekly expense report 
+double addAllExpenses(){
+    double total = expenses1.housing + expenses1.utilities + expenses1.transportation + expenses1.food;
+    double total2 = expenses2.housing + expenses2.utilities + expenses2.transportation + expenses2.food;
+    double total3 = expenses3.housing + expenses3.utilities + expenses3.transportation + expenses3.food;
+    cout<<"total for the week is: " << total + total2 + total3 << endl;
+    return total;
+}
+
 
 int main(){
     int choice;
@@ -85,9 +96,10 @@ int main(){
     bool gameOn = true;
     while (gameOn != false){
         cout << "\n\n *******************************\n";
-        cout << " 1 - Display expenses\n";
-        cout << " 2 - add expenses\n";
-        cout << " 3 - Exit.\n";
+        cout << " 1 - Display daily expenses\n";
+        cout << " 2 - Display weekly expenses\n";
+        cout << " 3 - add expenses\n";
+        cout << " 4 - Exit.\n";
         cout << " Enter your choice and press return: ";
 
         cin >> choice;
@@ -109,6 +121,9 @@ int main(){
                 }
             break;
             case 2:
+                addAllExpenses();
+            break;
+            case 3:
                 cout << "\n Add daily expenses in  for day 1 in $nzd \n";
                 setDailyExpenses();
                 cout << "\n Add daily expenses in  for day 2 in $nzd \n";
@@ -116,7 +131,7 @@ int main(){
                 cout << "\n Add daily expenses in  for day 3 in $nzd \n";
                 setDailyExpenses3();
             break;
-            case 3:
+            case 4:
                 cout << " \n End of Program. \n";
                 gameOn = false;
             break;
