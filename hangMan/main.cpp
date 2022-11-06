@@ -1,3 +1,5 @@
+//question 5 - Nicolas hayvice-Caballe
+
 #include <iostream>
 #include <vector>
 #include "hangmanFunctions.h"

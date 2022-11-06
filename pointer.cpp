@@ -1,8 +1,9 @@
+//question 2 - Nicolas hayvice-Caballe
+
 #include <iostream>
 #include <vector>
 
 using namespace std;
-
 
 // passing array to function using a pointer
 
