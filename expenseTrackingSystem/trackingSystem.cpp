@@ -2,90 +2,86 @@
 
 using namespace std;
 
-struct Expenses{
+struct Expenses1{
     double housing;
     double utilities;
     double transportation;
     double food;
-    double entertainment;
-};
+} expenses1;
 
-Expenses setDailyExpenses(){
+struct Expenses2{
+    double housing;
+    double utilities;
+    double transportation;
+    double food;
+} expenses2;
 
-    Expenses set;
+struct Expenses3{
+    double housing;
+    double utilities;
+    double transportation;
+    double food;
+} expenses3;
 
-    cout<<"Enter in Housing expenses: ";
-    cin>> set.housing;
-    cout<<"Enter in Utilities expenses: ";
-    cin>>set.utilities;
-    cout<<"Enter in transportation expenses: ";
-    cin>>set.transportation;
-    cout<<"Enter in Food expenses: ";
-    cin>>set.food;
-
-    return set;
-}
-
-Expenses setDailyExpenses2(){
-
-    Expenses set;
+void setDailyExpenses(){
 
     cout<<"Enter in Housing expenses: ";
-    cin>> set.housing;
+    cin>>expenses1.housing;
     cout<<"Enter in Utilities expenses: ";
-    cin>>set.utilities;
+    cin>>expenses1.utilities;
     cout<<"Enter in transportation expenses: ";
-    cin>>set.transportation;
+    cin>>expenses1.transportation;
     cout<<"Enter in Food expenses: ";
-    cin>>set.food;
-
-    return set;
+    cin>>expenses1.food;
 }
 
-Expenses setDailyExpenses3(){
-
-    Expenses set;
+void setDailyExpenses2(){
 
     cout<<"Enter in Housing expenses: ";
-    cin>> set.housing;
+    cin>>expenses2.housing;
     cout<<"Enter in Utilities expenses: ";
-    cin>>set.utilities;
+    cin>>expenses2.utilities;
     cout<<"Enter in transportation expenses: ";
-    cin>>set.transportation;
+    cin>>expenses2.transportation;
     cout<<"Enter in Food expenses: ";
-    cin>>set.food;
-
-    return set;
+    cin>>expenses2.food;
 }
 
-// Budget calculate_spent()
-// {
-//     Budget total;
-    
-//     Budget spent;
-    
-//     Budget fixed;
-    
-    
-//     fixed = set_budget();
-//     spent = get_spent();
-    
-//     total.housing = (fixed.housing - spent.housing);
-//     total.utilities = (fixed.utilities - spent.utilities);
-//     total.household_exp = (fixed.household_exp - spent.household_exp);
-//     total.transportation = (fixed.transportation - spent.transportation);
-//     total.food = (fixed.food - spent.food);
-//     total.medical = (fixed.medical - spent.medical);
-//     total.insurance = (fixed.insurance - spent.insurance);
-//     total.entertainment = (fixed.entertainment - spent.entertainment);
-//     total.clothing = (fixed.clothing - spent.clothing);
-//     total.misc = (fixed.misc - spent.misc);
-    
-//     return(total);
-// }
+void setDailyExpenses3(){
+
+    cout<<"Enter in Housing expenses: ";
+    cin>>expenses3.housing;
+    cout<<"Enter in Utilities expenses: ";
+    cin>>expenses3.utilities;
+    cout<<"Enter in transportation expenses: ";
+    cin>>expenses3.transportation;
+    cout<<"Enter in Food expenses: ";
+    cin>>expenses3.food;
+}
+
+// add Expenses1
+double addDailyExpenses(){
+    double total = expenses1.housing + expenses1.utilities + expenses1.transportation + expenses1.food;
+    cout<<"total is: " << total << endl;
+    return total;
+}
+
+double addDailyExpenses2(){
+    double total = expenses2.housing + expenses2.utilities + expenses2.transportation + expenses2.food;
+    cout<<"total is: " << total << endl;
+    return total;
+}
+
+double addDailyExpenses3(){
+    double total = expenses3.housing + expenses3.utilities + expenses3.transportation + expenses3.food;
+    cout<<"total is: " << total << endl;
+    return total;
+}
+
 
 int main(){
     int choice;
+    int choice2;
     bool gameOn = true;
     while (gameOn != false){
         cout << "\n\n *******************************\n";
@@ -98,17 +94,27 @@ int main(){
 
         switch (choice){
             case 1:
-                cout << "\n View Daily & weekly expenses Expenses \n";
-                cout << "\n daily expenses are: "; 
-                // calculateExpenses();
+                cout << "\n View the different total Daily expenses: \n";
+                cout << " 1 - Day 1\n";
+                cout << " 2 - Day 2\n";
+                cout << " 3 - Day 3\n";
+                cout << " Enter your choice: ";
+                cin >> choice2;
+                if (choice2 == 1) {
+                addDailyExpenses();
+                } else if (choice2 == 2) {
+                addDailyExpenses2();
+                } else if (choice2 == 3) {
+                addDailyExpenses3();
+                }
             break;
             case 2:
                 cout << "\n Add daily expenses in  for day 1 in $nzd \n";
                 setDailyExpenses();
                 cout << "\n Add daily expenses in  for day 2 in $nzd \n";
-                setDailyExpenses();
+                setDailyExpenses2();
                 cout << "\n Add daily expenses in  for day 3 in $nzd \n";
-                setDailyExpenses();
+                setDailyExpenses3();
             break;
             case 3:
                 cout << " \n End of Program. \n";
